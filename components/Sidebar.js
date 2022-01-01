@@ -5,8 +5,8 @@ import {
   LibraryIcon,
   PlusCircleIcon,
   RssIcon,
-  HeartIcon,
 } from "@heroicons/react/outline";
+import { HeartIcon } from "@heroicons/react/solid";
 import { signOut, useSession } from "next-auth/react";
 import { useRecoilState } from "recoil";
 import { playlistIdState } from "../atoms/playlistAtom";
@@ -14,7 +14,7 @@ import useSpotify from "../hooks/useSpotify";
 
 const Sidebar = () => {
   const spotifyApi = useSpotify();
-  const { data: session, status } = useSession();
+  const { data: session } = useSession();
   const [playlists, setPlaylists] = useState();
   const [playlistId, setPlaylistId] = useRecoilState(playlistIdState);
 
@@ -56,12 +56,12 @@ const Sidebar = () => {
           <PlusCircleIcon className="h-5 w-5" />
           <p>Create Playlist</p>
         </button>
-        <button className="flex items-center space-x-2 hover:text-white">
-          <HeartIcon className="h-5 w-5" />
+        <button className="flex items-center space-x-2 hover:text-white ">
+          <HeartIcon className="h-5 w-5 text-blue-500" />
           <p>Liked Songs</p>
         </button>
         <button className="flex items-center space-x-2 hover:text-white">
-          <RssIcon className="h-5 w-5" />
+          <RssIcon className="h-5 w-5 text-green-500" />
           <p>Your episodes</p>
         </button>
 

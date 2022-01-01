@@ -1,7 +1,4 @@
-import {
-  HeartIcon,
-  VolumeUpIcon as VolumeDownIcon,
-} from "@heroicons/react/outline";
+import { VolumeUpIcon as VolumeDownIcon } from "@heroicons/react/outline";
 import {
   FastForwardIcon,
   PauseIcon,
@@ -21,7 +18,7 @@ import useSpotify from "../hooks/useSpotify";
 
 const Player = () => {
   const spotifyApi = useSpotify();
-  const { data: session, status } = useSession();
+  const { data: session } = useSession();
   const [currentTrackId, setCurrentIdTrack] =
     useRecoilState(currentTrackIdState);
   const [isPlaying, setIsPlaying] = useRecoilState(isPlayingState);
